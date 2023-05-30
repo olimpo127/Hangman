@@ -137,6 +137,7 @@ const HangmanGame = () => {
         alignItems: 'center',
         justifyContent: 'center',
         minHeight: '100vh',
+        background: "orange"
       }}
     >
       <h1 style={{ color: 'darkblue', textAlign: 'center' }}>Hangman Game</h1>
