@@ -222,10 +222,10 @@ const HangmanGame = () => {
         Reset
       </button>
       <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
-        <p style={{ marginRight: '20px', textAlign: 'center', background: "yellow", fontWeight: "bold" }}>
+        <p style={{ marginRight: '20px', textAlign: 'center', background: "yellow", fontWeight: "bold", padding: "5px" }}>
           {player1Name} Wins: {player1Wins}
         </p>
-        <p style={{ textAlign: 'center', background: "yellow", fontWeight: "bold" }}>
+        <p style={{ textAlign: 'center', background: "yellow", fontWeight: "bold", padding: "5px" }}>
           {player2Name} Wins: {player2Wins}
         </p>
       </div>
