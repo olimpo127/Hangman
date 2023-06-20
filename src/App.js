@@ -154,6 +154,18 @@ const HangmanGame = () => {
     setPlayer2Name(event.target.value);
   };
 
+  const handleReset = () => {
+    setSecretWord("");
+    setGuessedLetters([]);
+    setRemainingAttempts(6);
+    setGameOver(false);
+    setPlayer1Name("Player 1");
+    setPlayer2Name('Player 2');
+    setPlayer1Wins(0);
+    setPlayer2Wins(0);
+    setCurrentPlayer('player1');
+  }
+
   return (
     <div
       style={{
@@ -195,6 +207,19 @@ const HangmanGame = () => {
         }}
       >
         New Game
+      </button>
+      <button 
+      onClick={handleReset}
+      style={{
+          backgroundColor: 'green',
+          color: 'white',
+          padding: '10px 20px',
+          borderRadius: '5px',
+          border: 'none',
+          cursor: 'pointer',
+          marginTop: '5px',
+        }}>
+        Reset
       </button>
       <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
         <p style={{ marginRight: '20px', textAlign: 'center', background: "yellow", fontWeight: "bold" }}>
