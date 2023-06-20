@@ -197,7 +197,7 @@ const HangmanGame = () => {
         New Game
       </button>
       <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
-        <p style={{ marginRight: '20px', textAlign: 'center', background: "red", fontWeight: "bold" }}>
+        <p style={{ marginRight: '20px', textAlign: 'center', background: "yellow", fontWeight: "bold" }}>
           {player1Name} Wins: {player1Wins}
         </p>
         <p style={{ textAlign: 'center', background: "yellow", fontWeight: "bold" }}>
