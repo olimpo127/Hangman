@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const HangmanGame = () => {
   const [secretWord, setSecretWord] = useState('');
@@ -68,6 +68,18 @@ const HangmanGame = () => {
     }
   };
 
+  useEffect(() => {
+    if (remainingAttempts === 0) {
+      setGameOver(true);
+      alert('Game over! The secret word was: ' + secretWord);
+      if (currentPlayer === 'player1') {
+        incrementPlayer1Wins();
+      } else {
+        incrementPlayer2Wins();
+      }
+    }
+  }, [remainingAttempts]);
+
   const isWordGuessed = () => {
     for (let i = 0; i < secretWord.length; i++) {
       if (!guessedLetters.includes(secretWord[i])) {
@@ -76,6 +88,20 @@ const HangmanGame = () => {
     }
     return true;
   };
+
+  useEffect(() => {
+    if (secretWord.length > 0 && isWordGuessed()) {
+      setGameOver(true);
+      alert('Congratulations! You won!');
+      if (currentPlayer === 'player1') {
+        incrementPlayer2Wins();
+      } else {
+        incrementPlayer1Wins();
+      }
+    }
+  }, [secretWord, guessedLetters]);
+  
+  
 
   const incrementPlayer1Wins = () => {
     setPlayer1Wins(player1Wins + 1);
